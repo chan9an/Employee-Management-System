@@ -1,9 +1,43 @@
-<div class="d-flex justify-content-center mt-3">
-    <div class="input-group" style="width: 50%; max-width: 300px;">
-      <input type="search" class="form-control" placeholder="Search" aria-label="Search" />
-      <span class="input-group-text border-0">
-        <i class="fas fa-search"></i>
-      </span>
+<h1 class="text-center mb-4">Find Employee</h1>
+
+<form #eid="ngForm" (ngSubmit)="getEmp(eid)">
+    <div class="input-group mb-3">
+        <div class="col-auto">
+            <input type="text" id="id" name="id" class="form-control" aria-label="Employee's-id" aria-describedby="Employee's-id" placeholder="Search by Employee's ID" #id="ngModel" ngModel required maxlength="5" minlength="1">
+        </div>
+        <div>
+          <button class="btn btn-outline-primary" type="submit" id="button-addon2">Search</button>
+        </div>
     </div>
-  </div>
-  
+    <span style="color: red;" *ngIf="id.touched && id.invalid">Please Enter Valid ID</span>
+</form>
+
+<h1 class="text-center mt-5">Employee's Record</h1>
+
+<table class="table table-hover" *ngIf="emp">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Eid</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="table-row" >
+            <td>{{emp.id}}</td>
+            <td>{{emp.fname}}</td>
+            <td>{{emp.lname}}</td>
+            <td>{{emp.age}}</td>
+            <td>{{emp.salary}}</td>
+            <td>
+                <div class="action-buttons">
+                    <button class="btn btn-primary action-btn" routerLink="/update">Edit</button>&nbsp;
+                    <button class="btn btn-danger action-btn" (click)="delete(emp.id)">Delete</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

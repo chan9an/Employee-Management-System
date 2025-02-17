@@ -6,7 +6,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchEmpComponent } from './search-emp/search-emp.component';
 import { AddEmpComponent } from './add-emp/add-emp.component';
 import { UpdateEmpComponent } from './update-emp/update-emp.component';
-import { DeleteEmpComponent } from './delete-emp/delete-emp.component';
+import { RouterModule } from '@angular/router';
+
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ViewEmpComponent } from './view-emp/view-emp.component'; // Import ViewEmpComponent here
@@ -19,8 +20,8 @@ import { FormsModule } from '@angular/forms';
     SearchEmpComponent,
     AddEmpComponent,
     UpdateEmpComponent,
-    DeleteEmpComponent
-    // Remove ViewEmpComponent from here
+
+    
   ],
   imports: [
     BrowserModule,
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     CommonModule,
     ViewEmpComponent,
-    FormsModule  // Import ViewEmpComponent here
+    FormsModule , 
+    RouterModule
   ],
   providers: [],  
   bootstrap: [AppComponent]

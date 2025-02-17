@@ -6,12 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'  
 })
 export class ViewEmpService {
+  
 
   constructor(private http:HttpClient) { }
   url1="http://localhost:9090/employees"
   url2="http://localhost:9090/delete"
   url3="http://localhost:9090/save"
   url4="http://localhost:9090/update"
+  url5="http://localhost:9090/emp"
   getEmployees(){
    return this.http.get(this.url1);
 }
@@ -31,7 +33,7 @@ addEmp(id:any,Firstname:any,lastname:any,age:any,salary:any,){
   return this.http.post(this.url3,e);
 }
 updEmp(id:any,Firstname:any,lastname:any,age:any,salary:any){
-  alert(`Are You sure You want to Update ${Firstname}${lastname} with ${id} and salary${salary}`)
+  alert(`Are You sure You want to Update ${Firstname} ${lastname} with  ${id} and salary ${salary}`)
   let e={
     id:id,
     fname:Firstname,
@@ -41,4 +43,14 @@ updEmp(id:any,Firstname:any,lastname:any,age:any,salary:any){
   }
   return this.http.post(this.url4,e);
 }
+
+getEmployeeById(id: any):Observable<any> {
+  return this.http.get(`${this.url1}/${id}`); 
+}
+
+getEmp(eid:any){
+  return this.http.get(this.url5+"/"+eid);
+}
+
+
 }

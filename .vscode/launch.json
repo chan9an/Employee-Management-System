@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CaseStudy1779798Application<CaseStudy_1_7797_98>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.EduBridge.CaseStudy1779798Application",
+            "projectName": "CaseStudy_1_7797_98",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

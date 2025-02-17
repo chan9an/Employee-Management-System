@@ -1,0 +1,87 @@
+/* Import a clean font from Google Fonts (Roboto for example) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Set default font family to Roboto for the entire page */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar Styles */
+#sidebar-wrapper {
+    background-color: #343a40; /* Dark gray color for sidebar */
+    color: white; /* White text color */
+    height: 100vh; /* Full viewport height */
+    font-size: 16px; /* Slightly larger text for better readability */
+}
+
+#sidebar-wrapper .sidebar-heading {
+    background-color: #007bff; /* Blue accent color */
+    color: white; /* White text color */
+    padding: 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 1px; /* Slight spacing for clarity */
+}
+
+#sidebar-wrapper .list-group-item {
+    background-color: #343a40; /* Same color as sidebar */
+    color: white; /* White text color */
+    border: none; /* Remove borders from sidebar links */
+    font-size: 1rem; /* Standard size for list items */
+    font-weight: 500; /* Semi-bold font weight */
+}
+
+#sidebar-wrapper .list-group-item:hover {
+    background-color: #0056b3; /* Hover effect with a lighter blue */
+    color: white; /* White text color when hovered */
+    cursor: pointer; /* Show a pointer cursor on hover */
+}
+
+/* Page Background */
+#page-content-wrapper {
+    background-color: #f4f6f9; /* Light gray background for the content */
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    font-size: 1rem; /* Standard font size for content */
+}
+
+/* Styling for table */
+table {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem; /* Slightly smaller font for table */
+    color: #333; /* Darker color for table text for better contrast */
+    width: 100%;
+}
+
+/* Table Header */
+table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: 700;
+}
+
+/* Table Body */
+table td {
+    padding: 0.75rem;
+}
+
+/* Active Sidebar Link */
+.list-group-item.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        width: 250px; /* Sidebar width for smaller screens */
+    }
+
+    #page-content-wrapper {
+        margin-left: 0;
+        padding: 15px;
+    }
+}
